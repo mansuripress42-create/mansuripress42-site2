@@ -1,196 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-<title>Mansuri Press 42 — Goodness That Grows</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mansuri Press 42 — Goodness That Grows</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Amiri&display=swap');
 
-<style>
-:root {
-  --sand: #d6b46b;
-  --gold: #e3c16f;
-  --charcoal: #1a0f08;
-  --soft: rgba(255, 224, 175, 0.2);
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background: radial-gradient(circle at center, #2c170a 0%, #0d0603 100%);
-  color: var(--gold);
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: desertBreath 8s ease-in-out infinite;
-}
+    /* Базовые стили */
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: "Playfair Display", serif;
+      color: #f9e8c9;
+      background: radial-gradient(circle at 50% 50%, #2b1c10 0%, #0e0905 100%);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: desert-breath 14s ease-in-out infinite;
+    }
 
-/* breathing desert effect */
-@keyframes desertBreath {
-  0% { background-color: #1c0f05; }
-  50% { background-color: #2d1b08; }
-  100% { background-color: #1c0f05; }
-}
+    /* Эффект дыхания пустыни */
+    @keyframes desert-breath {
+      0%, 100% { background: radial-gradient(circle at 50% 50%, #2b1c10 0%, #0e0905 100%); }
+      50% { background: radial-gradient(circle at 50% 49%, #3a2713 0%, #120b07 100%); }
+    }
 
-/* pulsing MP42 logo */
-#logo {
-  background: var(--gold);
-  color: var(--charcoal);
-  padding: 5px 10px;
-  border-radius: 6px;
-  box-shadow: 0 0 12px var(--gold);
-  animation: pulse 2s infinite alternate;
-  font-weight: bold;
-}
-@keyframes pulse {
-  from { box-shadow: 0 0 6px var(--gold); }
-  to { box-shadow: 0 0 18px var(--gold); }
-}
+    /* Орнамент */
+    .ornament {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d3/Islamic_Geometric_Pattern_1.svg');
+      background-size: 500px;
+      opacity: 0.04;
+      animation: ornament-fade 20s ease-in-out infinite alternate;
+      z-index: 0;
+      filter: sepia(80%) brightness(0.9);
+    }
 
-/* subtle pattern overlay */
-body::after {
-  content: "";
-  background-image: radial-gradient(var(--soft) 1px, transparent 1px);
-  background-size: 40px 40px;
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  animation: drift 40s linear infinite;
-}
-@keyframes drift {
-  from { background-position: 0 0; }
-  to { background-position: 200px 400px; }
-}
+    @keyframes ornament-fade {
+      from { opacity: 0.03; transform: scale(1); }
+      to { opacity: 0.07; transform: scale(1.02); }
+    }
 
-/* stars flicker */
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: var(--gold);
-  opacity: 0.8;
-  border-radius: 50%;
-  animation: flicker 3s infinite ease-in-out;
-}
-@keyframes flicker {
-  0%, 100% { opacity: 0.1; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.4); }
-}
+    header {
+      position: absolute;
+      top: 20px;
+      text-align: center;
+      width: 100%;
+      font-size: 14px;
+      z-index: 5;
+    }
 
-/* footer */
-footer {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  font-size: 12px;
-  color: var(--gold);
-}
+    header nav a {
+      color: #d6b56f;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    header nav a:hover { color: #fff4d2; }
 
-/* top nav */
-nav {
-  position: absolute;
-  top: 15px;
-  display: flex;
-  gap: 20px;
-  font-size: 14px;
-}
-nav a {
-  text-decoration: none;
-  color: var(--gold);
-  transition: 0.3s;
-}
-nav a:hover {
-  color: white;
-}
+    .logo {
+      display: inline-block;
+      padding: 8px 14px;
+      background: rgba(255, 229, 162, 0.08);
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255, 204, 80, 0.3);
+      animation: glow 3s ease-in-out infinite alternate;
+    }
 
-/* title block */
-h1 {
-  font-size: 2.8rem;
-  z-index: 2;
-  margin-top: 30px;
-  text-shadow: 0 0 12px rgba(255, 220, 160, 0.3);
-}
-h2 {
-  font-size: 1.3rem;
-  font-weight: normal;
-  color: #cbb279;
-}
-button {
-  background: var(--gold);
-  border: none;
-  padding: 10px 20px;
-  color: #2b1b09;
-  border-radius: 20px;
-  font-weight: bold;
-  margin-top: 25px;
-  box-shadow: 0 0 10px var(--gold);
-  cursor: pointer;
-  transition: all 0.3s;
-}
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 18px var(--gold);
-}
-#buildTag {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--gold);
-  color: var(--charcoal);
-  font-weight: bold;
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 13px;
-  box-shadow: 0 0 10px var(--gold);
-}
-</style>
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px rgba(255, 210, 120, 0.2); }
+      100% { box-shadow: 0 0 24px rgba(255, 214, 100, 0.8); }
+    }
+
+    main {
+      text-align: center;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin: 0.4em 0 0.2em;
+      color: #f7e4b3;
+      text-shadow: 0 0 20px rgba(255, 210, 120, 0.4);
+      animation: title-fade 6s ease-in-out infinite;
+    }
+
+    @keyframes title-fade {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 1; }
+    }
+
+    h2 {
+      font-family: "Amiri", serif;
+      font-size: 1.4em;
+      color: #f5d88d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      color: #e0cba1;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      background-color: #d6b56f;
+      color: #2b1a0b;
+      border: none;
+      padding: 12px 28px;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 220, 130, 0.4);
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #ffe4a3;
+      box-shadow: 0 0 30px rgba(255, 235, 150, 0.6);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #d8c59c;
+      text-align: center;
+      z-index: 3;
+    }
+
+    footer span.heart {
+      display: inline-block;
+      color: #ffb5b5;
+      animation: heartbeat 1.3s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 40%, 80%, 100% { transform: scale(1); }
+      20%, 60% { transform: scale(1.3); }
+    }
+
+    /* Звёзды */
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(255, 241, 184, 0.8);
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
 </head>
-
 <body>
-  <div id="buildTag">MP42 BUILD v3.4 ✅</div>
+  <div class="ornament"></div>
+  <div class="stars" id="stars"></div>
 
-  <nav>
-    <a href="https://instagram.com/mansuripress42" target="_blank">Instagram</a>
-    <a href="https://tiktok.com/@mansuripress42" target="_blank">TikTok</a>
-    <a href="https://t.me/mansuripress42" target="_blank">Telegram</a>
-    <a href="https://youtube.com/@mansuripress42" target="_blank">YouTube</a>
-    <a href="https://facebook.com/mansuripress42" target="_blank">Facebook</a>
-  </nav>
+  <header>
+    <div class="logo">MP42</div>
+    <nav>
+      <a href="https://instagram.com/mansuripress42" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@mansuripress" target="_blank">TikTok</a>
+      <a href="https://t.me/mansuripress42" target="_blank">Telegram</a>
+      <a href="https://youtube.com/@mansuripress42" target="_blank">YouTube</a>
+      <a href="https://facebook.com/mansuripress42" target="_blank">Facebook</a>
+    </nav>
+  </header>
 
-  <div id="logo">MP42</div>
-  <h1>Goodness That Grows</h1>
-  <h2>صدقة جارية</h2>
-  <p>Bilingual Publishing for Central Asia & Africa — rooted in sadaqah jariyah.</p>
-
-  <button onclick="window.open('https://www.amazon.com/s?k=Mansuri+Press+42','_blank')">
-    Amazon KDP
-  </button>
+  <main>
+    <h1>Goodness That Grows</h1>
+    <h2>صدقة جارية</h2>
+    <p>Bilingual Publishing for Central Asia & Africa — rooted in sadaqah jariyah.</p>
+    <button class="button" onclick="window.open('https://amazon.com', '_blank')">Amazon KDP</button>
+  </main>
 
   <footer>
-    © 2025 ❤️ Mansuri Press 42 — Goodness That Grows
+    © 2025 <span class="heart">❤</span> Mansuri Press 42 — Goodness That Grows  
   </footer>
 
-<script>
-// create random stars
-for (let i = 0; i < 50; i++) {
-  const star = document.createElement('div');
-  star.classList.add('star');
-  star.style.top = Math.random() * 100 + '%';
-  star.style.left = Math.random() * 100 + '%';
-  star.style.animationDelay = (Math.random() * 3) + 's';
-  document.body.appendChild(star);
-}
-</script>
-
+  <script>
+    // Звёзды
+    const stars = document.getElementById('stars');
+    for (let i = 0; i < 150; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.top = Math.random() * 100 + '%';
+      s.style.animationDelay = (Math.random() * 4) + 's';
+      s.style.animationDuration = (2 + Math.random() * 4) + 's';
+      stars.appendChild(s);
+    }
+  </script>
 </body>
 </html>
