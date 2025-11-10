@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mansuri Press 42 — Goodness That Grows</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Amiri&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #181513;
+      --gold: #d4b16a;
+      --soft-gold: #f7e7be;
+      --text-light: #e8dec7;
+      --shadow: rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Amiri', serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Восточный узор */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'),
+                  radial-gradient(circle at 30% 50%, rgba(212,177,106,0.05), transparent 60%);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(212,177,106,0.2);
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--soft-gold);
+      font-weight: 700;
+    }
+
+    .logo span {
+      background: #3b2d20;
+      padding: 6px 10px;
+      border-radius: 8px;
+      color: var(--soft-gold);
+    }
+
+    nav {
+      margin-top: 0.7rem;
+    }
+
+    nav a {
+      color: var(--gold);
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--soft-gold);
+    }
+
+    main {
+      flex: 1;
+      text-align: center;
+      padding: 3rem 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--soft-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #bfae85;
+      margin-bottom: 2rem;
+    }
+
+    /* Центрированная кнопка Amazon */
+    .buttons {
+      margin-bottom: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .buttons a {
+      display: inline-block;
+      background: var(--gold);
+      color: #1a1a1a;
+      font-weight: 700;
+      padding: 0.6rem 1.4rem;
+      border-radius: 20px;
+      margin: 0.3rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: var(--soft-gold);
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(212,177,106,0.15);
+      box-shadow: 0 0 15px var(--shadow);
+      border-radius: 12px;
+      padding: 1rem;
+      width: 290px;
+      text-align: left;
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--soft-gold);
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: #d9c8a8;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.2rem 0;
+      border-top: 1px solid rgba(212,177,106,0.2);
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--soft-gold);
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    footer small {
+      color: #c4b491;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <span>MP42</span> Goodness That Grows
+    </div>
+    <nav>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Telegram</a>
+      <a href="#">YouTube</a>
+      <a href="#">Facebook</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Goodness That Grows</h1>
+    <p class="subtitle">Bilingual Publishing for Central Asia & Africa — rooted in sadaqah jariyah.</p>
+
+    <div class="buttons">
+      <a href="#">Amazon KDP</a>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📚 Publishing & Books</h3>
+        <p>Children’s coloring books, gratitude journals, mandalas and cultural guides — bilingual (English + Arabic).</p>
+      </div>
+      <div class="card">
+        <h3>💬 Community & Media</h3>
+        <p>Join our Telegram community, watch videos on TikTok and YouTube, and follow our storytelling on Instagram.</p>
+      </div>
+      <div class="card">
+        <h3>🌿 Goodness That Grows</h3>
+        <p>Creative sadaqah jariyah: everything we publish is meant to inspire long-term benefit for readers and communities.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>© 2025 ❤️ Mansuri Press 42 — Goodness That Grows</small><br>
+    <small>Bilingual Publishing for Central Asia & Africa</small>
+  </footer>
+</body>
+</html>
