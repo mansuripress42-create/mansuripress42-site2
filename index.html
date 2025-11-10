@@ -3,7 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Mansuri Press 42 — Goodness That Grows</title>
+  <meta name="description" content="Mansuri Press 42 — Bilingual Publishing for Central Asia & Africa. Goodness That Grows — a creative sadaqah jariyah initiative that inspires through books, art, and gratitude." />
+  <meta name="keywords" content="Mansuri Press 42, Goodness That Grows, sadaqah jariyah, publishing, Central Asia, Africa, gratitude journal, mandala coloring book, bilingual Arabic English books" />
+  <meta name="author" content="Mansuri Press 42" />
+
+  <!-- Open Graph / Telegram preview -->
+  <meta property="og:title" content="Mansuri Press 42 — Goodness That Grows" />
+  <meta property="og:description" content="Bilingual Publishing for Central Asia & Africa — rooted in sadaqah jariyah." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/mansuri-press/assets/main/mp42-preview.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mansuripress42-site2.vercel.app/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+  %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E
+  %3Crect width='64' height='64' rx='12' ry='12' fill='%233b2d20'/%3E
+  %3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Playfair Display' font-size='28' fill='%23f7e7be'%3EMP%3C/tspan%3E%3Ctext x='50%' y='75%' text-anchor='middle' font-family='Playfair Display' font-size='18' fill='%23d4b16a'%3E42%3C/text%3E%3C/svg%3E" />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Amiri&display=swap" rel="stylesheet">
 
@@ -17,11 +34,7 @@
       --pattern-opacity: 0.12;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Amiri', serif;
@@ -35,7 +48,6 @@
       position: relative;
     }
 
-    /* --- Восточный фон --- */
     body::before {
       content: "";
       position: fixed;
@@ -78,9 +90,7 @@
       box-shadow: 0 0 5px rgba(212,177,106,0.4);
     }
 
-    nav {
-      margin-top: 0.7rem;
-    }
+    nav { margin-top: 0.7rem; }
 
     nav a {
       color: var(--gold);
@@ -90,9 +100,7 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: var(--soft-gold);
-    }
+    nav a:hover { color: var(--soft-gold); }
 
     main {
       flex: 1;
@@ -169,14 +177,8 @@
       transition: opacity 0.3s;
     }
 
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .card:hover {
-      border-color: var(--gold);
-      transform: translateY(-5px);
-    }
+    .card:hover::before { opacity: 1; }
+    .card:hover { border-color: var(--gold); transform: translateY(-5px); }
 
     .card h3 {
       font-family: 'Playfair Display', serif;
@@ -185,10 +187,7 @@
       font-size: 1.2rem;
     }
 
-    .card p {
-      color: #d9c8a8;
-      font-size: 0.96rem;
-    }
+    .card p { color: #d9c8a8; font-size: 0.96rem; }
 
     footer {
       text-align: center;
@@ -201,17 +200,13 @@
       box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
     }
 
-    footer small {
-      color: #c4b491;
-    }
+    footer small { color: #c4b491; }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo">
-      <span>MP42</span> Goodness That Grows
-    </div>
+    <div class="logo"><span>MP42</span> Goodness That Grows</div>
     <nav>
       <a href="#">Instagram</a>
       <a href="#">TikTok</a>
@@ -224,7 +219,6 @@
   <main>
     <h1>Goodness That Grows</h1>
     <p class="subtitle">Bilingual Publishing for Central Asia & Africa — rooted in sadaqah jariyah.</p>
-
     <div class="buttons">
       <a href="#">Amazon KDP</a>
     </div>
