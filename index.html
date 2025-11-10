@@ -8,7 +8,9 @@
 <meta http-equiv="Expires" content="0" />
 <title>Mansuri Press 42 — Goodness That Grows</title>
 
-<!-- Simple fonts (Google) -->
+<!-- Prevent caching via version -->
+<meta name="version" content="3.5">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Amiri&display=swap" rel="stylesheet">
 
 <style>
@@ -20,18 +22,13 @@
   --text:#f6e8c5;
   --muted:#d9c49a;
 }
-
-/* RESET-ish */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
   font-family:"Playfair Display",serif;
   color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
   background: radial-gradient(circle at 50% 40%, var(--bg2) 0%, var(--bg1) 100%);
-  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -39,56 +36,49 @@ body{
   padding:40px 20px;
   animation:desertBreath 14s ease-in-out infinite;
   position:relative;
+  overflow:hidden;
 }
 
-/* breathing background */
 @keyframes desertBreath{
   0%{background: radial-gradient(circle at 50% 40%, #2b1b10 0%, #0e0805 100%)}
   50%{background: radial-gradient(circle at 48% 42%, #3a2512 0%, #120b07 100%)}
   100%{background: radial-gradient(circle at 50% 40%, #2b1b10 0%, #0e0805 100%)}
 }
 
-/* ornament overlay (subtle) */
 .ornament {
   position:absolute;
   inset:0;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d3/Islamic_Geometric_Pattern_1.svg");
   background-repeat: repeat;
-  background-size: 380px;
+  background-size: 360px;
   opacity:0.04;
   z-index:0;
-  filter:sepia(0.7) brightness(0.85);
+  filter:sepia(0.6) brightness(0.8);
   pointer-events:none;
-  transform-origin:center;
-  animation:ornFade 24s ease-in-out infinite alternate;
+  animation:ornFade 22s ease-in-out infinite alternate;
 }
 @keyframes ornFade{from{opacity:0.03;transform:scale(1)}to{opacity:0.07;transform:scale(1.02)}}
 
-/* stars layer */
 .stars{position:absolute;inset:0;z-index:1;pointer-events:none}
-.star{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--gold);opacity:0.9;filter:blur(0.2px);}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--gold);opacity:0.9;filter:blur(0.2px)}
 
-/* header nav & logo */
 .topbar{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:5;display:flex;align-items:center;gap:18px;font-size:14px}
 .logo-pill{
   background:linear-gradient(180deg,var(--gold),var(--gold-2));
   color:#1a1209;
   padding:6px 10px;border-radius:8px;font-weight:700;
   box-shadow:0 6px 18px rgba(210,160,80,0.22);
-  display:inline-block;line-height:1;
   animation:logoPulse 2.6s ease-in-out infinite alternate;
 }
 @keyframes logoPulse{from{box-shadow:0 6px 12px rgba(210,160,80,0.18)}to{box-shadow:0 10px 26px rgba(210,160,80,0.32)}}
 .topbar a{color:var(--muted);text-decoration:none;opacity:0.95}
 .topbar a:hover{color:#fff}
 
-/* main content */
 .container{position:relative;z-index:3;max-width:1100px;padding:28px}
 h1{font-size:48px;margin:10px 0 6px;color:var(--text);text-shadow:0 8px 28px rgba(210,160,60,0.12)}
 h2{font-family: "Amiri", serif;color:#f1dca6;margin:0 0 10px;font-size:20px}
 .lead{color:var(--muted);max-width:760px;margin:0 auto 22px}
 
-/* button */
 .cta{
   background:linear-gradient(180deg,var(--gold),var(--gold-2));
   color:#1a1209;border:none;padding:12px 26px;border-radius:26px;font-weight:700;cursor:pointer;
@@ -97,12 +87,10 @@ h2{font-family: "Amiri", serif;color:#f1dca6;margin:0 0 10px;font-size:20px}
 }
 .cta:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(210,160,80,0.28)}
 
-/* footer */
 .footer{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--muted);font-size:13px;z-index:4}
 .heart{color:#ff9aa2;display:inline-block;animation:heartBeat 1.2s infinite}
 @keyframes heartBeat{0%,40%,80%,100%{transform:scale(1)}20%,60%{transform:scale(1.25)}}
 
-/* responsive */
 @media(max-width:720px){
   h1{font-size:32px}
   .topbar{font-size:13px;gap:10px;padding:0 8px}
@@ -114,28 +102,39 @@ h2{font-family: "Amiri", serif;color:#f1dca6;margin:0 0 10px;font-size:20px}
   <div class="ornament" aria-hidden="true"></div>
   <div class="stars" id="stars" aria-hidden="true"></div>
 
-  <div class="topbar" role="navigation" aria-label="Top navigation">
-    <div class="logo-pill" aria-hidden="true">MP42</div>
-    <a href="https://instagram.com/mansuripress42" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://tiktok.com/@mansuripress" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://t.me/mansuripress42" target="_blank" rel="noopener">Telegram</a>
-    <a href="https://youtube.com/@mansuripress42" target="_blank" rel="noopener">YouTube</a>
-    <a href="https://facebook.com/mansuripress42" target="_blank" rel="noopener">Facebook</a>
+  <div class="topbar">
+    <div class="logo-pill">MP42</div>
+    <a href="https://instagram.com/mansuripress42" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@mansuripress" target="_blank">TikTok</a>
+    <a href="https://t.me/mansuripress42" target="_blank">Telegram</a>
+    <a href="https://youtube.com/@mansuripress42" target="_blank">YouTube</a>
+    <a href="https://facebook.com/mansuripress42" target="_blank">Facebook</a>
   </div>
 
-  <main class="container" role="main">
+  <main class="container">
     <h1>Goodness That Grows</h1>
     <h2>صدقة جارية</h2>
     <p class="lead">Bilingual Publishing for Central Asia & Africa — rooted in sadaqah jariyah.</p>
     <button class="cta" onclick="window.open('https://www.amazon.com/s?k=Mansuri+Press+42','_blank')">Amazon KDP</button>
   </main>
 
-  <div class="footer">© 2025 <span class="heart" aria-hidden="true">❤</span> Mansuri Press 42 — Goodness That Grows</div>
+  <div class="footer">© 2025 <span class="heart">❤</span> Mansuri Press 42 — Goodness That Grows</div>
 
 <script>
-// generate stars (random positions + subtle twinkle)
+// --- Auto-refresh on new version (anti-cache trigger) ---
+const VERSION = '3.5';
+const stored = localStorage.getItem('mp42-version');
+if (stored !== VERSION) {
+  localStorage.setItem('mp42-version', VERSION);
+  const cacheBust = '?update=' + Date.now();
+  if (!window.location.search.includes('update=')) {
+    window.location.href = window.location.pathname + cacheBust;
+  }
+}
+
+// Stars generator
 const starsRoot = document.getElementById('stars');
-const STAR_COUNT = Math.min(Math.max(Math.floor((window.innerWidth*window.innerHeight)/60000), 40), 220);
+const STAR_COUNT = Math.min(Math.max(Math.floor((window.innerWidth*window.innerHeight)/60000), 50), 200);
 for(let i=0;i<STAR_COUNT;i++){
   const s = document.createElement('div');
   s.className='star';
@@ -150,14 +149,11 @@ for(let i=0;i<STAR_COUNT;i++){
   s.style.opacity = 0.25 + Math.random()*0.9;
   starsRoot.appendChild(s);
 }
-
-// twinkle keyframes injected for consistent durations
 const styleEl = document.createElement('style');
 styleEl.innerHTML = `@keyframes twinkle{0%{opacity:0.15;transform:scale(0.8)}50%{opacity:1;transform:scale(1.2)}100%{opacity:0.15;transform:scale(0.85)}}`;
 document.head.appendChild(styleEl);
 
-// Basic check to help with caching oddities
-console.log('MP42: page loaded — v3.4');
+console.log('MP42: loaded v3.5 — auto cache refresh active');
 </script>
 </body>
 </html>
