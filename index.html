@@ -5,33 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Mansuri Press 42 — Goodness That Grows</title>
-  <meta name="description" content="Mansuri Press 42 — Bilingual Publishing for Central Asia & Africa. Goodness That Grows — a creative sadaqah jariyah initiative that inspires through books, art, and gratitude." />
-  <meta name="keywords" content="Mansuri Press 42, Goodness That Grows, sadaqah jariyah, publishing, Central Asia, Africa, gratitude journal, mandala coloring book, bilingual Arabic English books" />
+  <meta name="description" content="Mansuri Press 42 — Bilingual Publishing for Central Asia & Africa. Goodness That Grows — a creative sadaqah jariyah initiative inspiring through books, art, and gratitude." />
   <meta name="author" content="Mansuri Press 42" />
 
-  <!-- Open Graph / Telegram preview -->
-  <meta property="og:title" content="Mansuri Press 42 — Goodness That Grows" />
-  <meta property="og:description" content="Bilingual Publishing for Central Asia & Africa — rooted in sadaqah jariyah." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/mansuri-press/assets/main/mp42-preview.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mansuripress42-site2.vercel.app/" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
   %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E
   %3Crect width='64' height='64' rx='12' ry='12' fill='%233b2d20'/%3E
-  %3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Playfair Display' font-size='28' fill='%23f7e7be'%3EMP%3C/tspan%3E%3Ctext x='50%' y='75%' text-anchor='middle' font-family='Playfair Display' font-size='18' fill='%23d4b16a'%3E42%3C/text%3E%3C/svg%3E" />
+  %3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Playfair Display' font-size='28' fill='%23f7e7be'%3EMP%3C/text%3E
+  %3Ctext x='50%' y='75%' text-anchor='middle' font-family='Playfair Display' font-size='18' fill='%23d4b16a'%3E42%3C/text%3E%3C/svg%3E" />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Amiri&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-dark: #15110f;
+      --bg-dark: #120d0a;
       --gold: #d4b16a;
       --soft-gold: #f7e7be;
       --text-light: #f2e9d0;
-      --shadow: rgba(0, 0, 0, 0.6);
-      --pattern-opacity: 0.12;
+      --pattern-opacity: 0.15;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -54,7 +45,7 @@
       inset: 0;
       background:
         url('https://www.transparenttextures.com/patterns/arabesque.png') repeat center,
-        radial-gradient(circle at 50% 20%, rgba(212,177,106,0.08), transparent 70%);
+        radial-gradient(circle at 50% 20%, rgba(212,177,106,0.1), transparent 75%);
       background-size: 400px 400px;
       opacity: var(--pattern-opacity);
       pointer-events: none;
@@ -68,7 +59,6 @@
       border-bottom: 1px solid rgba(212,177,106,0.3);
       position: relative;
       z-index: 2;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     .logo {
@@ -90,7 +80,9 @@
       box-shadow: 0 0 5px rgba(212,177,106,0.4);
     }
 
-    nav { margin-top: 0.7rem; }
+    nav {
+      margin-top: 0.7rem;
+    }
 
     nav a {
       color: var(--gold);
@@ -118,8 +110,16 @@
       margin-bottom: 0.8rem;
     }
 
+    .arabic {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      color: #d4b16a;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+    }
+
     .subtitle {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: #cdbf96;
       margin-bottom: 2.5rem;
     }
@@ -164,20 +164,8 @@
       width: 300px;
       text-align: left;
       transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(212,177,106,0.1), transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .card:hover::before { opacity: 1; }
     .card:hover { border-color: var(--gold); transform: translateY(-5px); }
 
     .card h3 {
@@ -197,7 +185,6 @@
       color: var(--soft-gold);
       font-size: 0.9rem;
       margin-top: auto;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
     }
 
     footer small { color: #c4b491; }
@@ -212,13 +199,16 @@
       <a href="#">TikTok</a>
       <a href="#">Telegram</a>
       <a href="#">YouTube</a>
+      <a href="#">YouTube Kids</a>
       <a href="#">Facebook</a>
     </nav>
   </header>
 
   <main>
     <h1>Goodness That Grows</h1>
+    <div class="arabic">صدقة جارية</div>
     <p class="subtitle">Bilingual Publishing for Central Asia & Africa — rooted in sadaqah jariyah.</p>
+
     <div class="buttons">
       <a href="#">Amazon KDP</a>
     </div>
@@ -243,5 +233,10 @@
     <small>© 2025 ❤️ Mansuri Press 42 — Goodness That Grows</small><br>
     <small>Bilingual Publishing for Central Asia & Africa</small>
   </footer>
+
+  <!-- Антикэш -->
+  <script>
+    console.log("Mansuri Press 42 — cache bypass: " + new Date().toISOString());
+  </script>
 </body>
 </html>
